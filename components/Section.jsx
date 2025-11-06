@@ -4,7 +4,7 @@ import { fadeUp } from "./motion";
 
 export default function Section({ id, title, children }) {
   return (
-    <section id={id} className="py-28">
+    <section id={id} className="py-32 md:py-40">
       <div className="max-w-container mx-auto px-6">
         
         {title && (

@@ -11,9 +11,17 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
   const imgRef = useRef(null);
 
-  // Parallax Effect
+  // ✅ Detect mobile
+  const isMobile =
+    typeof window !== "undefined" && window.innerWidth < 768;
+
+  // ✅ Parallax Effect (disabled on mobile)
   useIsomorphicLayoutEffect(() => {
     if (!imgRef.current) return;
+
+    // ❌ Stop parallax if mobile
+    if (isMobile) return;
+
     const el = imgRef.current;
 
     const ctx = gsap.context(() => {
@@ -34,15 +42,16 @@ export default function Hero() {
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [isMobile]);
 
   return (
     <section id="home" className="relative pt-40 pb-32 overflow-hidden">
-      
-      {/* Background Glow */}
+
+      {/* TOP GLOW */}
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] 
         bg-accent/20 rounded-full blur-[180px] opacity-40 pointer-events-none" />
 
+      {/* MAIN GRID */}
       <div className="max-w-container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
         
         {/* LEFT TEXT */}
@@ -107,6 +116,10 @@ export default function Hero() {
           <div className="absolute inset-0 -z-10 blur-3xl bg-accent/20 rounded-full" />
         </div>
       </div>
+
+      {/* ✅ BOTTOM GLOW */}
+      <div className="absolute inset-0 -z-10 blur-[200px] bg-accent/10 opacity-30"></div>
+
     </section>
   );
 }

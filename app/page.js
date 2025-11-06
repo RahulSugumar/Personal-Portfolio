@@ -21,6 +21,7 @@ export default function Home() {
       <footer className="py-10 text-center text-xs opacity-60">
         © {new Date().getFullYear()} Rahul Sugumar. All rights reserved.
       </footer>
+
     </>
   );
 }

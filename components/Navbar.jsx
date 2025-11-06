@@ -23,7 +23,7 @@ export default function Navbar() {
       className="
         fixed top-4 left-1/2 -translate-x-1/2 z-50
         bg-black/40 backdrop-blur-xl border border-white/10
-        px-6 py-3 rounded-2xl shadow-lg shadow-black/20
+        px-6 py-3 rounded-2xl shadow-xl shadow-black/30
       "
     >
       <nav className="flex items-center justify-between gap-10">

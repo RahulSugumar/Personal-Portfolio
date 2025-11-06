@@ -9,3 +9,27 @@ html, body {
   color: #e5e7eb;
   scroll-behavior: smooth;
 }
+/* Smooth font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Smooth hover scale */
+a, button {
+  transition: 0.2s ease-in-out;
+}
+
+/* Disable text selection for big headers */
+h1, h2 {
+  user-select: none;
+}
+
+/* Make scrollbars minimal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f633;
+  border-radius: 10px;
+}
+
